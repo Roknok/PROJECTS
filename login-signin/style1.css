@@ -1,0 +1,71 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.7;
+}
+.container {
+  z-index: 9999;
+  position: fixed;
+  margin-top: 50vh;
+  margin-left: 50vw;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: auto auto 50px auto 50px auto 50px 50px;
+  background-color: rgba(63, 63, 163, 0.7);
+  border-radius: 20px;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 1.5rem;
+  user-select:none;
+}
+input {
+  height: 30px;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  transition: all 1s;
+  padding-left: 10px;
+  transform: scale(1);
+}
+
+input::placeholder {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+  border: 2px solid aqua;
+  transform: scale(1.2);
+}
+input:focus::placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+.signin {
+  outline: none;
+  font-size: 1rem;
+  background-color: rgba(0, 255, 255, 0.5);
+  border: none;
+}
+.signin:hover {
+  background-color: rgba(150, 255, 255, 0.5);
+}
+.signin:active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.link{
+  position:fixed;
+  top:0;
+  right:0;
+  margin:10px;
+  z-index: 9999;
+}

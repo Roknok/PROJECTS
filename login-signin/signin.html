@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style1.css" />
+    <title>signin</title>
+  </head>
+  <body>
+    <span class="link"
+      >already have an account ? <a href="login.html">log in</a></span
+    >
+    <div class="container">
+      <h1 class="welcome">WELCOME</h1>
+      <label for="name">Name : </label>
+      <input type="text" class="name" placeholder="NAME" spellcheck="false" />
+      <label for="email">e-mail : </label>
+      <input type="email" class="email" placeholder="email@email.com" />
+      <label for="password">Password</label>
+      <input type="password" class="password" placeholder="*********" />
+      <button class="signin">SIGN IN</button>
+    </div>
+    <img
+      draggable="false"
+      src="backgrounds/background1.jpeg"
+      class="background-image"
+      id="background-image"
+    />
+    <script>
+      let image = document.getElementById("background-image");
+      image.src =
+        "backgrounds/background" +
+        Math.floor(((Math.random() * 10) % 3) + 1) +
+        ".jpeg";
+    </script>
+  </body>
+</html>

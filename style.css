@@ -1,0 +1,49 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-color: blue;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+.heading {
+  font-size: 2rem;
+  color: aqua;
+}
+.links {
+  padding: 10px;
+}
+.link {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 250ms;
+  color: black;
+}
+.link:hover {
+  background-color: antiquewhite;
+}
+.emogy {
+  position: relative;
+  padding: 4px;
+  margin: 0px;
+  height: 30px;
+  transition: all 250ms;
+  transform: translate(0, 25%);
+}
+.emogy:hover {
+  background-color: aquamarine;
+}
+p::before {
+  content: "*****";
+  user-select: none;
+  color: white;
+}
+.p {
+  font-size: 1.5rem;
+}
