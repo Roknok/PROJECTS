@@ -47,3 +47,14 @@ p::before {
 .p {
   font-size: 1.5rem;
 }
+.href{
+  text-decoration: dotted;
+  font-size: 1.2rem;
+}
+.href::before{
+  content: "LINK : ";
+  padding: 10px;
+}
+#project{
+  font-size: 1.5rem;
+}
