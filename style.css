@@ -48,7 +48,7 @@ p::before {
   font-size: 1.5rem;
 }
 .href {
-  font-family: 'Courier New';
+  font-family: "Courier New";
   text-decoration: none;
   font-size: 1rem;
   color: rgb(238, 238, 0);
@@ -73,10 +73,10 @@ p::before {
   margin: 5px;
   color: rgb(85, 85, 85);
 }
-.projects{
+.projects {
   margin: 5px;
 }
-li{
+li {
   font-family: "Varela Round";
   font-size: 2rem;
 }
