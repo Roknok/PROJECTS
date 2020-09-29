@@ -77,8 +77,8 @@ p::before {
   margin: 5px;
 }
 li {
-  font-family: "Varela Round";
   font-size: 2rem;
+  font-family: "Varela Round";
 }
 @media (orientation: portrait) {
   .header {
