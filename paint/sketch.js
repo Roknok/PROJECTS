@@ -10,7 +10,7 @@ function setup() {
   createCanvas(700, 450);
   button = createButton("x")
   sty(button)
-  button.position(width - button.width, 0)
+  button.position((windowWidth/2)+width/2 - button.width, 0)
   setu();
 }
 
@@ -30,7 +30,7 @@ function setu() {
 }
 
 function draw() {
-
+  button.position((windowWidth/2)+width/2 - button.width, 0)
   noStroke()
   fill(255, 0, 0)
   rect(2, 2, 30, 30)
