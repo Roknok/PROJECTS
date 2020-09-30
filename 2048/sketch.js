@@ -282,14 +282,11 @@ var body = document.body
 swipedetect(body,(dir)=>{
   if (dir = "left"){
     left()
-  }
-  if (dir = "right"){
+  }else   if (dir = "right"){
     right()
-  }
-  if (dir = "top"){
+  }else   if (dir = "up"){
     up()
-  }
-  if (dir = "down"){
+  }else   if (dir = "down"){
     down()
   }
   console.log(dir)
