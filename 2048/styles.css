@@ -5,5 +5,5 @@ canvas{
 body {
     overscroll-behavior: contain;
     margin: 10px;
-    height : 100vh;
+    height: 100vh;
 }
