@@ -39,66 +39,83 @@ function compare(a, b) {
   }
   return false;
 }
+
+function left(){
+  parray = copyc(array);
+  for (var i = 0; i < 4; i++) {
+    array[i] = arrange(array[i]);
+    array[i] = combine(array[i]);
+    array[i] = arrange(array[i]);
+  }
+  let changed = compare(parray, array);
+  if (changed) {
+    number();
+    count++;
+    check = false;
+  }
+}
+
+function up(){
+  parray = copyc(array);
+  format(1);
+  for (var i = 0; i < 4; i++) {
+    array[i] = arrange(array[i]);
+    array[i] = combine(array[i]);
+    array[i] = arrange(array[i]);
+  }
+  format(3);
+  let changed = compare(parray, array);
+  if (changed) {
+    number();
+    count++;
+    check = false;
+  }
+}
+
+function down(){
+  parray = copyc(array);
+  format(1);
+  for (var i = 0; i < 4; i++) {
+    array[i] = arrange(array[i]);
+    array[i] = combine(array[i]);
+    array[i] = arrange2(array[i]);
+  }
+  format(3);
+  let changed = compare(parray, array);
+  if (changed) {
+    number();
+    count++;
+    check = false;
+  }
+}
+
+function right(){
+  parray = copyc(array);
+  for (var i = 0; i < 4; i++) {
+    array[i] = arrange(array[i]);
+    array[i] = combine(array[i]);
+    array[i] = arrange2(array[i]);
+  }
+  let changed = compare(parray, array);
+  if (changed) {
+    number();
+    count++;
+    check = false;
+  }
+}
+
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
-    parray = copyc(array);
-    for (var i = 0; i < 4; i++) {
-      array[i] = arrange(array[i]);
-      array[i] = combine(array[i]);
-      array[i] = arrange(array[i]);
-    }
-    let changed = compare(parray, array);
-    if (changed) {
-      number();
-      count++;
-      check = false;
-    }
+    left()
   }
   if (keyCode === RIGHT_ARROW) {
-    parray = copyc(array);
-    for (var i = 0; i < 4; i++) {
-      array[i] = arrange(array[i]);
-      array[i] = combine(array[i]);
-      array[i] = arrange2(array[i]);
-    }
-    let changed = compare(parray, array);
-    if (changed) {
-      number();
-      count++;
-      check = false;
-    }
+    right()
   }
   if (keyCode === UP_ARROW) {
-    parray = copyc(array);
-    format(1);
-    for (var i = 0; i < 4; i++) {
-      array[i] = arrange(array[i]);
-      array[i] = combine(array[i]);
-      array[i] = arrange(array[i]);
-    }
-    format(3);
-    let changed = compare(parray, array);
-    if (changed) {
-      number();
-      count++;
-      check = false;
-    }
+    up()
   }
   if (keyCode === DOWN_ARROW) {
-    parray = copyc(array);
-    format(1);
-    for (var i = 0; i < 4; i++) {
-      array[i] = arrange(array[i]);
-      array[i] = combine(array[i]);
-      array[i] = arrange2(array[i]);
-    }
-    format(3);
-    let changed = compare(parray, array);
-    if (changed) {
-      number();
-      count++;
-      check = false;
-    }
+    down()
   }
 }
 function draw() {
@@ -212,3 +229,75 @@ function format(a) {
     array = this.array;
   }
 }
+
+
+function swipedetect(el, callback){
+  
+  var touchsurface = el,
+  swipedir,
+  startX,
+  startY,
+  distX,
+  distY,
+  threshold = 150, //required min distance traveled to be considered swipe
+  restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+  allowedTime = 300, // maximum time allowed to travel that distance
+  elapsedTime,
+  startTime,
+  handleswipe = callback || function(swipedir){}
+
+  touchsurface.addEventListener('touchstart', function(e){
+      var touchobj = e.changedTouches[0]
+      swipedir = 'none'
+      dist = 0
+      startX = touchobj.pageX
+      startY = touchobj.pageY
+      startTime = new Date().getTime() // record time when finger first makes contact with surface
+      e.preventDefault()
+  }, false)
+
+  touchsurface.addEventListener('touchmove', function(e){
+      e.preventDefault() // prevent scrolling when inside DIV
+  }, false)
+
+  touchsurface.addEventListener('touchend', function(e){
+      var touchobj = e.changedTouches[0]
+      distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+      distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+      elapsedTime = new Date().getTime() - startTime // get time elapsed
+      if (elapsedTime <= allowedTime){ // first condition for awipe met
+          if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+              swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+          }
+          else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+              swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+          }
+      }
+      handleswipe(swipedir)
+      e.preventDefault()
+  }, false)
+}
+
+var body = document.body
+swipedetect(body,(dir)=>{
+  if (dir = "left"){
+    left()
+  }
+  if (dir = "right"){
+    right()
+  }
+  if (dir = "top"){
+    up()
+  }
+  if (dir = "down"){
+    down()
+  }
+  console.log(dir)
+})
+//USAGE:
+
+// var el = document.getElementById('swipezone');
+// swipedetect(el, function(swipedir){
+//   // swipedir contains either "none", "left", "right", "top", or "down"
+//   el.innerHTML = 'Swiped <span style="color:yellow;margin: 0 5px;">' + swipedir +'</span>';
+// });
