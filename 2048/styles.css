@@ -2,3 +2,6 @@ canvas{
     display:block;
     margin: 0 auto;
 }
+body {
+    overscroll-behavior: contain;
+}
