@@ -9,7 +9,7 @@ let parray;
 let zero = 0;
 let check = false;
 let count = 0;
-let size=64;
+let size = 64;
 function setup() {
   createCanvas(400, 400);
   textAlign(CENTER, CENTER);
@@ -40,7 +40,7 @@ function compare(a, b) {
   return false;
 }
 
-function left(){
+function left() {
   parray = copyc(array);
   for (var i = 0; i < 4; i++) {
     array[i] = arrange(array[i]);
@@ -55,7 +55,7 @@ function left(){
   }
 }
 
-function up(){
+function up() {
   parray = copyc(array);
   format(1);
   for (var i = 0; i < 4; i++) {
@@ -72,7 +72,7 @@ function up(){
   }
 }
 
-function down(){
+function down() {
   parray = copyc(array);
   format(1);
   for (var i = 0; i < 4; i++) {
@@ -89,7 +89,7 @@ function down(){
   }
 }
 
-function right(){
+function right() {
   parray = copyc(array);
   for (var i = 0; i < 4; i++) {
     array[i] = arrange(array[i]);
@@ -106,16 +106,16 @@ function right(){
 
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
-    left()
+    left();
   }
   if (keyCode === RIGHT_ARROW) {
-    right()
+    right();
   }
   if (keyCode === UP_ARROW) {
-    up()
+    up();
   }
   if (keyCode === DOWN_ARROW) {
-    down()
+    down();
   }
 }
 function draw() {
@@ -132,12 +132,16 @@ function draw() {
           map(log(array[j][i]) / log(2), 1, 11, 0, 255)
         );
         rect(i * 100, j * 100, 100, 100);
-        if (array[j][i]===2048  ||  array[j][i]===1024){
-          size=40
-        }else if(array[j][i]===128  ||  array[j][i]===256  ||  array[j][i]===512){
-          size=50
-        }else{
-          size=64
+        if (array[j][i] === 2048 || array[j][i] === 1024) {
+          size = 40;
+        } else if (
+          array[j][i] === 128 ||
+          array[j][i] === 256 ||
+          array[j][i] === 512
+        ) {
+          size = 50;
+        } else {
+          size = 64;
         }
         textSize(size);
         fill(0);
@@ -230,71 +234,20 @@ function format(a) {
   }
 }
 
-
-function swipedetect(el, callback){
-  
-  var touchsurface = el,
-  swipedir,
-  startX,
-  startY,
-  distX,
-  distY,
-  threshold = 150, //required min distance traveled to be considered swipe
-  restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-  allowedTime = 300, // maximum time allowed to travel that distance
-  elapsedTime,
-  startTime,
-  handleswipe = callback || function(swipedir){}
-
-  touchsurface.addEventListener('touchstart', function(e){
-      var touchobj = e.changedTouches[0]
-      swipedir = 'none'
-      dist = 0
-      startX = touchobj.pageX
-      startY = touchobj.pageY
-      startTime = new Date().getTime() // record time when finger first makes contact with surface
-      e.preventDefault()
-  }, false)
-
-  touchsurface.addEventListener('touchmove', function(e){
-      e.preventDefault() // prevent scrolling when inside DIV
-  }, false)
-
-  touchsurface.addEventListener('touchend', function(e){
-      var touchobj = e.changedTouches[0]
-      distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-      distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-      elapsedTime = new Date().getTime() - startTime // get time elapsed
-      if (elapsedTime <= allowedTime){ // first condition for awipe met
-          if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
-              swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-          }
-          else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-              swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-          }
-      }
-      handleswipe(swipedir)
-      e.preventDefault()
-  }, false)
-}
-
-var body = document.body
-swipedetect(body,(dir)=>{
-  if (dir = "left"){
-    left()
-  }else   if (dir = "right"){
-    right()
-  }else   if (dir = "up"){
-    up()
-  }else   if (dir = "down"){
+var hammertime = new Hammer(document.body, {});
+hammertime.on("swipe", function (ev) {
+  console.log(ev);
+  if(ev.offsetDirection===16){
     down()
   }
-  console.log(dir)
-})
-//USAGE:
-
-// var el = document.getElementById('swipezone');
-// swipedetect(el, function(swipedir){
-//   // swipedir contains either "none", "left", "right", "top", or "down"
-//   el.innerHTML = 'Swiped <span style="color:yellow;margin: 0 5px;">' + swipedir +'</span>';
-// });
+  if(ev.offsetDirection===8){
+    up()
+  }
+  if(ev.offsetDirection===4){
+    right()
+  }
+  if(ev.offsetDirection===2){
+    left()
+  }
+});
+hammertime.get("swipe").set({ direction: Hammer.DIRECTION_ALL });
