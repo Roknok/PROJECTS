@@ -1,9 +1,0 @@
-canvas{
-    display:block;
-    margin: 0 auto;
-}
-body {
-    overscroll-behavior: contain;
-    margin: 10px;
-    height : 100vh;
-}
