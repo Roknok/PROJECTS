@@ -1,6 +1,11 @@
 :root {
   --size:65px;
 }
+@media (orientation : portrait){
+  :root{
+   --size:40px;
+  }
+}
 body {
   user-select: none;
   background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
@@ -66,7 +71,4 @@ button:active{
   margin-left: 50vw;
   transform: translate(-50%, -50%);
   border: 2px solid rgb(0, 0, 0);
-}
-@media (orientation : portrait){
-  --size : 50px
 }
