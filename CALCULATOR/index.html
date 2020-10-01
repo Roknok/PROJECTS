@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="sketch.js"></script>
+    <title>CALCULATOR</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="container1">
+        <div id="previous"></div>
+        <div id="present"></div>
+      </div>
+      <div id="container2">
+        <button id="double" onclick="clearnum(true)">AC</button>
+        <button id="number" onclick="clearnum()">C</button>
+        <button id="operator" onclick="operate(innerHTML)">-</button>
+        <br />
+        <button id="number" class="number" onclick="add(innerHTML)">7</button>
+        <button id="number" class="number" onclick="add(innerHTML)">8</button>
+        <button id="number" class="number" onclick="add(innerHTML)">9</button>
+        <button id="operator" onclick="operate(innerHTML)">÷</button>
+        <br />
+        <button id="number" class="number" onclick="add(innerHTML)">6</button>
+        <button id="number" class="number" onclick="add(innerHTML)">5</button>
+        <button id="number" class="number" onclick="add(innerHTML)">4</button>
+        <button id="operator" onclick="operate(innerHTML)">×</button>
+        <br />
+        <button id="number" class="number" onclick="add(innerHTML)">1</button>
+        <button id="number" class="number" onclick="add(innerHTML)">2</button>
+        <button id="number" class="number" onclick="add(innerHTML)">3</button>
+        <button id="operator" onclick="operate(innerHTML)">+</button>
+        <br />
+        <button id="number" class="number" onclick="add(innerHTML)">0</button>
+        <button id="number" onclick="add(innerHTML)">.</button>
+        <button id="double" onclick="equal()">=</button>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
