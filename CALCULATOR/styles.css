@@ -67,3 +67,6 @@ button:active{
   transform: translate(-50%, -50%);
   border: 2px solid rgb(0, 0, 0);
 }
+@media (orientation : portrait){
+  --size : 50px
+}
