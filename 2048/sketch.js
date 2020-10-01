@@ -13,6 +13,7 @@ let size = 64;
 function setup() {
   createCanvas(400, 400);
   textAlign(CENTER, CENTER);
+  number();  
   number();
 }
 function copyc(arr) {
