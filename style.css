@@ -95,3 +95,21 @@ li {
     color: black;
   }
 }
+
+::-webkit-scrollbar{
+    width:20px;
+    background-color: black;
+    border: 2px solid blue;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 15px;
+  height: inherit;
+  background: rgb(102, 102, 102); 
+  border-radius: 0px;
+  border-right: 2px solid blue;
+  border-left: 2px solid blue;
+}
+
+
+
