@@ -15,19 +15,6 @@ body {
   font-size: 2rem;
   color: aqua;
 }
-.links {
-  padding: 10px;
-}
-.link {
-  padding: 10px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 250ms;
-  color: black;
-}
-.link:hover {
-  background-color: antiquewhite;
-}
 .emogy {
   position: relative;
   padding: 4px;
