@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="about.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">ABOUT</header>
+    <div class="content">
+      <img class="mypic" src="rauank.png" alt="raunak.png" />
+      <p class="text">
+        HELLO!! Welcome to my website. Here I put everything about my projects
+        that I make. I am <span id="age">14</span>. I like coding and would like
+        to mention the name of "The Coding Train" youtube channel from where I
+        have learnt a lot of things. I also want to acknowledge my family and
+        friends who encouraged me and helped me to become better. Dont forget to
+        play my games and see my projects!
+      </p>
+    </div>
+    <script>
+      let age = document.getElementById("age");
+      let birthyear = 2006;
+      let currentyear = new Date().getFullYear();
+      age.innerHTML = currentyear - birthyear;
+    </script>
+  </body>
+</html>

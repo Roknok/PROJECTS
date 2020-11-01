@@ -1,0 +1,51 @@
+html,body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #dfdfdf;
+}
+.mypic{
+    float: left;
+    position: relative;
+    border-radius: 20px;
+    height: 400px;
+    border: 1px solid black;
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.header{
+    font-family: monospace;
+    font-size: 3rem;
+    background-image: linear-gradient(pink,skyblue);
+    text-align: center;
+    padding: 10px;
+    border-bottom:2px solid black;
+}
+.content{
+    padding: 10px;
+}
+.text{
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding:10px;
+    font-size: 1.5rem;
+    line-height: 30px;
+}
+p::before{
+    content: "llll";
+    opacity: 0;
+}
+
+::-webkit-scrollbar{
+    width:20px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 15px;
+  height: inherit;
+  background: rgb(102, 102, 102); 
+  border-radius: 0px;
+  border: 2px solid blue;
+}
