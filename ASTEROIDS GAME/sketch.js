@@ -153,8 +153,7 @@ function start() {
       text("OUT OF LIVES", width / 2, height / 2);
       fail.play();
     }, 1000);
-  }
-  if (asters.length === 0) {
+  }else if (asters.length === 0) {
     setTimeout(() => {
       stop();
       textAlign(CENTER, CENTER);
