@@ -3,6 +3,12 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .header {
   background-color: blue;
   padding: 20px;
@@ -12,14 +18,10 @@ body {
   justify-content: space-between;
 }
 .heading {
-  font-size: 2rem;
+  padding: 5px;
+  font-size: 2.4rem;
   color: aqua;
 }
-
-.links{
-padding:0px;
-}
-
 .emogy {
   position: relative;
   padding: 4px;
@@ -32,7 +34,7 @@ padding:0px;
   background-color: aquamarine;
 }
 p::before {
-  content: "*****";
+  content: "****";
   user-select: none;
   color: white;
 }
@@ -54,20 +56,14 @@ p::before {
   font-weight: 600;
   font-size: 1.5rem;
 }
-.link-container {
-  font-size: 1rem;
-}
-.link-container::before {
-  content: "***";
-  color: white;
-}
+
 .description {
   font-size: 1.3rem;
   margin: 5px;
   color: rgb(85, 85, 85);
 }
 .projects {
-  margin: 5px;
+  margin: 2px;
 }
 li {
   font-family: "Varela Round";
@@ -78,21 +74,10 @@ li {
     background-color: blue;
     padding: 10px;
     width: 100vw;
-    display: block;
   }
   .heading {
-    font-size: 3rem;
+    font-size: 2.6rem;
     color: aqua;
-  }
-  .links {
-    padding: 0px;
-  }
-  .link {
-    padding: 5px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: all 250ms;
-    color: black;
   }
 }
 
@@ -108,5 +93,4 @@ li {
   border-radius: 0px;
   border: 2px solid blue;
 }
-
 
