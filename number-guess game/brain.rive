@@ -1,0 +1,13 @@
+! version = 2.0
+
++ hfsdbhksdbvoldfbvosdbsdhofbhbfholsdb *
+- <set num=<star>><get num>
+
++ #
+* <star> > <get num> => GUESS A LOWER NUMBER
+* <star> < <get num> => GUESS A HIGHER NUMBER
+* <star> == <get num> => RIGHT GUESS ! IT'S THE NUMBER <get num>
+
+
++ *
+- GUESS A NUMBER BETWEEN 0 and 100000
