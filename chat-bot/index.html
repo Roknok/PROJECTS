@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"
+    ></script>
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/rivescript/2.0.0/rivescript.min.js"
+    ></script>
+    <script defer src="script.js"></script>
+    <title>CHATBOT</title>
+  </head>
+  <body>
+    <header id="header">
+      <span id="title"> RAUNAK'S CHAT BOT. </span>
+      <span onclick="toggletheme()" id="settings">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Windows_Settings_app_icon.png/768px-Windows_Settings_app_icon.png"
+        />
+      </span>
+    </header>
+    <div class="spacing"></div>
+    <ul id="messages"></ul>
+    <div class="spacing"></div>
+    <form id="form" action="">
+      <input tabindex="-1" id="m" autocomplete="off"/><button
+        id="b"
+      >
+        SEND
+      </button>
+    </form>
+  </body>
+</html>

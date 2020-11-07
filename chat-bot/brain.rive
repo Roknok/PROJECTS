@@ -1,0 +1,32 @@
+! version = 2.0
+// greeting messages
++ (hello|hi|hello*|hi*)
+- Hi, what is your name?
+- Hello, what is your name?
+// name
++ what is my name
+* <get name> == undefined => I don't know your name, what is it?
+- Your name is <get name>
+
++ my name is *
+- <set name=<formal>> Ah! I like the name <get name>. I will remember it. By the way my name is Ro, and title Bot, my full name is Ro Bot. But you can call me only Bot. 😊
+
++ [*]your name[*]
+- my name is Ro Bot.
+
+// smillee
++ (ok|ok*)
+- 😊
+
+
+// remember
++ remember *
+- <set remember=<star>> ok I will remember "<get remember>"
+
++ [*]to remember[*]
+- You told me to remember <get remember>
+
+
+
++ *
+- I can not understand what you are saying

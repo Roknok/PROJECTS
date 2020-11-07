@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: 20px "Varela Round";
+  overflow-x: hidden;
+}
+body.dark {
+  background-color: black;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: aqua;
+  z-index: 500;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#header.dark {
+  background-color: darkgreen;
+}
+
+#title {
+  font-size: 2rem;
+  color: black;
+}
+#title.dark {
+  color: #ccc;
+}
+#settings img {
+  height: 40px;
+  width: 40px;
+}
+#settings {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 200ms;
+}
+#settings:hover {
+  background-color: #ccc;
+}
+form {
+  background-color: white;
+  padding: 2px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+form input {
+  border: 1px solid #333;
+  padding: 10px;
+  width: 90%;
+  margin-right: 0.5%;
+  outline: none;
+  border-radius: 10px;
+}
+
+form button {
+  width: 9%;
+  background: aqua;
+  border: 1px solid green;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 2;
+  padding: 5;
+  bottom: 500px;
+}
+
+#messages li#other {
+  /* background: rgb(138, 138, 138); */
+  padding: 10px 10px;
+  margin: 10px;
+  margin-top: 20px;
+  min-width: 500px;
+  max-width: 550px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#messages li#me {
+  background: rgb(211, 211, 211);
+  position: relative;
+  left: calc(100vw - 570px);
+  padding: 10px 10px;
+  margin: 10px;
+  margin-top: 20px;
+  min-width: 500px;
+  max-width: 550px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#messages li {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+#messages li span#time {
+  font-size: 0.6rem;
+  text-align: end;
+}
+#messages li span#name {
+  font-size: 1rem;
+}
+.spacing {
+  height: 70px;
+}
+#messages li#other::after {
+  display: block;
+  content: " ";
+  height: 1px;
+  width: 1px;
+  border: 10px solid transparent;
+  border-bottom-color: inherit;
+  position: relative;
+  bottom: -10px;
+  right: 20px;
+}
+#messages li#me::after {
+  display: block;
+  content: " ";
+  height: 1px;
+  width: 1px;
+  border: 10px solid transparent;
+  border-bottom-color: inherit;
+  position: relative;
+  bottom: -10px;
+  left: 529px;
+}
+@media only screen and (max-device-width: 480px) {
+  form input {
+    border: 1px solid #333;
+    padding: 10px;
+    width: 85%;
+    height: 55px;
+    margin-right: 0;
+    outline: none;
+    border-radius: 50px;
+  }
+  #header #title {
+    font-size: 1.3rem;
+  }
+  #settings:hover {
+    background-color: inherit;
+  }
+
+  form button {
+    width: 15%;
+    height: 55px;
+    background: aqua;
+    border: 1px solid green;
+    padding: 0px;
+    border-radius: 50px;
+  }
+  #messages li#other {
+    padding: 10px 10px;
+    margin: 10px;
+    margin-top: 20px;
+    min-width: 250px;
+    max-width: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  #messages li#me {
+    position: relative;
+    left: calc(100vw - 320px);
+    padding: 10px 10px;
+    margin: 10px;
+    margin-top: 20px;
+    min-width: 250px;
+    max-width: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  #messages li#me::after {
+    left: 279px;
+  }
+}
+
+#transparent {
+  position: fixed;
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  opacity: 0.7;
+  transition: all 700ms;
+  transform: scale(0);
+}
+video {
+  transition: all 700ms;
+}
+#sendpic {
+  position: fixed;
+  height: 50px;
+  width: 100px;
+  top: 0px;
+  right: 0px;
+  background-color: green;
+  z-index: 10000;
+  transform: scale(0);
+}
+form.dark {
+  background-color: black;
+}
