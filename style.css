@@ -64,7 +64,7 @@ p::before {
   color: rgb(85, 85, 85);
 }
 .projects {
-  margin: auto;
+  margin: 10px;
 }
 li {
   font-family: "Varela Round";
