@@ -30,6 +30,7 @@ function setu() {
 }
 
 function draw() {
+for(var i = 0;i<5;i++){
   button.position(windowWidth / 2 + width / 2 - button.width, 0);
   noStroke();
   fill(255, 0, 0);
@@ -84,6 +85,7 @@ function draw() {
     stroke(r, g, b);
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
+}
 }
 
 function mousePressed() {
@@ -147,3 +149,6 @@ function mousePressed() {
     }
   }
 }
+
+
+
