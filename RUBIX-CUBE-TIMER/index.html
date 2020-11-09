@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>RUBIK'S CUBE TIMER</title>
+  </head>
+  <body>
+    <header>RUBIK'S CUBE TIMER</header>
+    <div id="scramble" class="scramble">
+      D2 L B2 R F2 L2 D2 R F2 R2 D2 B' U' F R' D2 U L' D F
+    </div>
+    <div class="time-cont">
+      <span class="time" id="time">00:00:00</span>
+    </div>
+    <div class="tools">
+      <div class="stats-cont">
+        <b class="bold"> STATISTICS : </b>
+        <div class="stats">
+          <span></span>
+          <span class="heading">CURRENT</span>
+          <span class="heading">BEST</span>
+          <div>Time :</div>
+          <span id="current">-</span>
+          <span id="best">-</span>
+          <div>Mean of three :</div>
+          <span id="current-mo3">-</span>
+          <span id="mo3">-</span>
+          <div>Average of five :</div>
+          <span id="current-ao5">-</span>
+          <span id="ao5">-</span>
+          <div>Average of twelve :</div>
+          <span id="current-ao12">-</span>
+          <span id="ao12">-</span>
+        </div>
+      </div>
+      <div class="times-cont" id="times-cont">
+        <b class="bold">TIMES :</b>
+        <ol id="times" class="times">
+
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>

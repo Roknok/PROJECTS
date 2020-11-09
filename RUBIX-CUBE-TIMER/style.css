@@ -1,0 +1,108 @@
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 5px;
+  font-size: 2.3rem;
+  background-color: teal;
+  text-align: center;
+}
+
+.time-cont {
+  padding: 60px;
+  text-align: center;
+  background-color: turquoise;
+}
+
+.scramble {
+  background-color: rgb(232, 232, 232);
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.time {
+  font-size: 10rem;
+}
+
+.tools{
+  display: flex;
+  justify-content: center;
+}
+
+.stats-cont{
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(255, 87, 57);
+  flex-grow: 1;
+  height: 1;
+  max-height: 200px;
+}
+
+.times-cont{
+  background-color: rgb(83, 71, 255);
+  flex-grow: 1;
+  margin: 10px;
+  padding: 10px;
+  height: 200px;
+}
+
+.stats{
+  line-height: 30px;
+  display: grid;
+  grid-template-columns: auto 100px 100px;
+}
+.stats span{
+  text-align: center;
+}
+
+.bold{
+  font-size: 1.5rem;
+  line-height: 40px;
+}
+
+.times{
+  font-size: 1.1rem;
+  padding-top: 0px;
+  padding-left: 0px;
+  max-height: 135px;
+  overflow-y: scroll;
+  background-color: tomato;
+}
+.times li{
+  line-height: 25px;
+  font-size: 1.2rem;
+  list-style-position: inside;
+  background-color: blue;
+  padding: 10px;
+  margin: 0px;
+  border: 1px solid black;
+}
+
+.times-cont b{
+  line-height: normal;
+}
+
+::-webkit-scrollbar{
+  background-color: black;
+  width: 20px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(11, 11, 238, 0.623);
+  border-right: 2px solid black;
+  border-left: 1px solid black;
+}
+
+.heading{
+  font-family: 'Franklin Gothic medium', sans-serif;
+}
