@@ -50,6 +50,7 @@ p::before {
 #project {
   font-size: 1.5rem;
   padding: 15px;
+  margin:auto;
 }
 .name {
   font-family: "Varela Round";
@@ -63,7 +64,7 @@ p::before {
   color: rgb(85, 85, 85);
 }
 .projects {
-  margin: 2px;
+  margin: auto;
 }
 li {
   font-family: "Varela Round";
