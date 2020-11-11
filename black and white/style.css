@@ -1,0 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+text-align: center;
+  font-size: 1.5rem;
+}
+canvas {
+  display: block;
+  position: fixed;
+  margin-left: 50vw;
+  margin-top: 50vh;
+  transform: translate(-50%,-50%);
+}
