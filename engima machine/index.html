@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENGIMA MACHINE</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div class="heading">ENGIMA MACHINE</div>
+      <div class="choice" onclick="changeFormat()">
+        <span class="encoder select" id="encoder">ENCODER</span>
+        <div class="mode" id="mode"></div>
+        <span class="decoder" id="decoder">DECODER</span>
+      </div>
+      <div class="gears">
+        <div class="gear one">
+          <span id="one">0</span>
+          <div class="button-cont">
+            <button onclick="change('one',1)" class="btn up">&#8679;</button>
+            <button onclick="change('one',-1)" class="btn down">&#8681;</button>
+          </div>
+        </div>
+        <div class="gear two">
+          <span id="two">0</span>
+          <div class="button-cont">
+            <button onclick="change('two',1)" class="btn up">&#8679;</button>
+            <button onclick="change('two',-1)" class="btn down">&#8681;</button>
+          </div>
+        </div>
+        <div class="gear three">
+          <span id="three">0</span>
+          <div class="button-cont">
+            <button onclick="change('three',1)" class="btn up">&#8679;</button>
+            <button onclick="change('three',-1)" class="btn down">
+              &#8681;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="areas">
+      <span class="title">Type your text here :</span>
+      <textarea name="input" class="input" id="input"></textarea>
+      <button class="encode-button" id="encode-button"> IT</button>
+      <span class="title">Output :</span>
+      <div class="output-cont">
+        <div class="output" id="output"></div>
+        <button class="copy" onClick="copy()">Copy</button>
+      </div>
+    </div>
+  </body>
+</html>
