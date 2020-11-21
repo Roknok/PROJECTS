@@ -33,10 +33,6 @@ let questions = [
 let index = 0;
 let correct = 0;
 
-// let name = ""
-
-// name = prompt("ENTER YOUR NAME :")
-
 function setQ(q) {
   question = document.getElementById("question");
   question.innerHTML = q.question;
