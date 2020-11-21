@@ -29,11 +29,6 @@ let questions = [
     options: ["EVERYONE"],
     answer: 0,
   },
-  {
-    question: "",
-    options: ["EVERYONE"],
-    answer: 0,
-  },
 ];
 let index = 0;
 let correct = 0;
