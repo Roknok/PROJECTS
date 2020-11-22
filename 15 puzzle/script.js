@@ -1,5 +1,11 @@
 let rows = 4;
 let cols = 4;
+let moves = 0;
+let time = 0;
+let started = false;
+let interval;
+
+let tiles = document.querySelectorAll(".tile");
 
 let grid = [
   [1, 2, 3, 4],
@@ -15,43 +21,30 @@ let solvedgrid = [
   [13, 14, 15, 16],
 ];
 function setup() {
-  createCanvas(400, 400);
-  textAlign(CENTER, CENTER);
+  noCanvas();
   scramble();
+  align();
 }
-function draw() {
-  background(200);
+function align() {
   for (var i = 0; i < rows; i++) {
     for (var j = 0; j < cols; j++) {
-      if (grid[j][i] !== 16) {
-        if (i + j * rows + 1 === grid[j][i]) {
-          fill("#ff781f");
-        } else {
-          fill(0, 0, 255);
-        }
-        rect(
-          i * (width / rows),
-          j * (height / rows),
-          width / rows,
-          height / cols
-        );
-        textSize(60);
-        fill(0);
-        text(
-          grid[j][i],
-          i * (width / rows) + width / rows / 2,
-          j * (height / rows) + height / rows / 2
-        );
+      tiles[grid[i][j] - 1].style["top"] = i * 100 + i * 10 + 12 + "px";
+      tiles[grid[i][j] - 1].style["left"] = j * 100 + j * 10 + 12 + "px";
+      if (i * 4 + j === grid[i][j] - 1) {
+        tiles[grid[i][j] - 1].classList.add("outofplace");
+      } else {
+        tiles[grid[i][j] - 1].classList.remove("outofplace");
       }
     }
-  }
-  textSize(100);
-  if (grid === solvedgrid) {
-    background(200, 150);
-    text("DONE !!", height / 2, width / 2);
-    noLoop();
+    if (grid === solvedgrid) {
+      document.getElementById("cover").style["display"] = "flex";
+        clearInterval(interval);
+    } else {
+      document.getElementById("cover").style["display"] = "none";
+    }
   }
 }
+
 function down() {
   transpose();
   right();
@@ -130,5 +123,14 @@ hammertime.on("swipe", function (ev) {
   }
   if (dir === 8) {
     up();
+  }
+  align();
+  moves++;
+  document.getElementById("moves").innerHTML = moves;
+  if (moves === 1) {
+    interval = setInterval(() => {
+      time++;
+      document.getElementById("time").innerHTML = time;
+    }, 1000);
   }
 });
