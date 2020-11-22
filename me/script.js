@@ -22,7 +22,7 @@ let questions = [
   {
     question: "What is my favourite food ?",
     options: ["fish", "mutton", "chicken"],
-    answer: 0,
+    answer: 2,
   },
   {
     question: "Who is my best friend ? (I bet you would get this correct)",
