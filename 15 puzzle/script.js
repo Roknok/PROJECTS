@@ -36,7 +36,7 @@ function align() {
         tiles[grid[i][j] - 1].classList.remove("outofplace");
       }
     }
-    if (grid === solvedgrid) {
+    if (solved()) {
       document.getElementById("cover").style["display"] = "flex";
         clearInterval(interval);
     } else {
@@ -44,6 +44,19 @@ function align() {
     }
   }
 }
+
+function solved() {
+  let bool = true
+  for (var i = 0; i < rows; i++){
+    for (var j = 0; j < cols; j++) {
+      if (grid[i][j] !== solvedgrid[i][j]) {
+        bool = false
+      }
+    }
+  }
+  return bool
+}
+
 
 function down() {
   transpose();
