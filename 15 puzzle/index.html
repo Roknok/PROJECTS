@@ -8,6 +8,27 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-
+      <div class="time" id="time">0</div>
+      <div class="moves" id="moves">0</div>
+  <button id="scramble" onclick="(()=>{scramble();moves = 0; time = 0;document.getElementById('moves').innerHTML = moves; document.getElementById('time').innerHTML = time;align()})()">SCRAMBLE</button>
+    <div class="grid">
+      <div class="tile">1</div>
+      <div class="tile">2</div>
+      <div class="tile">3</div>
+      <div class="tile">4</div>
+      <div class="tile">5</div>
+      <div class="tile">6</div>
+      <div class="tile">7</div>
+      <div class="tile">8</div>
+      <div class="tile">9</div>
+      <div class="tile">10</div>
+      <div class="tile">11</div>
+      <div class="tile">12</div>
+      <div class="tile">13</div>
+      <div class="tile">14</div>
+      <div class="tile">15</div>
+      <div class="tile nodisplay">16</div>
+      <div id="cover" class="cover">YOU WON</div>
+    </div>
   </body>
 </html>
