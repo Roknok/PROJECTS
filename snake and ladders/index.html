@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"
+    ></script>
+    <script defer src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SNAKE AND LADDRES</title>
+    <style>
+      .cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+      }
+
+      .dice {
+        height: 150px;
+        width: 150px;
+        border: 2px solid black;
+        border-radius: 20px;
+        margin-left: 10px;
+        background-color: rgb(248, 248, 134);
+        transition: 1s;
+      }
+      .dice.d1 {
+        content: url("dice/one.png");
+      }
+      .dice.d2 {
+        content: url("dice/two.png");
+      }
+      .dice.d3 {
+        content: url("dice/three.png");
+      }
+      .dice.d4 {
+        content: url("dice/four.png");
+      }
+      .dice.d5 {
+        content: url("dice/five.png");
+      }
+      .dice.d6 {
+        content: url("dice/six.png");
+      }
+      .dice.roll {
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        max-height: 150px;
+        width: 150px;
+        font-size: 2rem;
+        outline: none;
+        border: 2px solid black;
+        background-color: lightgreen;
+      }
+      .main-c {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      main {
+        position: relative;
+      }
+      .p {
+        position: absolute;
+        transition: 1s;
+        top: 550px;
+        left: 0px;
+        height: 42px;
+        width: 42px;
+        background-color: red;
+        border-radius: 50%;
+      }
+      .p::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        height: 36px;
+        width: 36px;
+        background-color: white;
+        opacity: 0.7;
+        border-radius: 50%;
+      }
+      .p::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        height: 30px;
+        width: 30px;
+        background-color: red;
+        border-radius: 50%;
+      }
+      .c {
+        background-color: rgb(0, 255, 0);
+      }
+      .c::after {
+        background-color: rgb(0, 255, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-c">
+      <main>
+        <div class="p c" id="c"></div>
+        <div class="p" id="p"></div>
+      </main>
+      <div class="cont">
+        <div class="dice roll" id="dice" onclick="change('p')">ROLL DICE</div>
+      </div>
+    </div>
+  </body>
+</html>
